@@ -9,5 +9,6 @@ import org.mapstruct.Mapping;
 public interface PlatoMapperIn {
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "categoria", ignore = true)
     Plato toDomain(PlatoRequestDTO requestDTO);
 }

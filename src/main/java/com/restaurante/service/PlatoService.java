@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PlatoService {
 
-    Plato crear(Plato plato);
+    Plato crear(Plato plato, Long categoriaId);
 
     Plato obtenerPorId(Long id);
 
@@ -14,7 +14,7 @@ public interface PlatoService {
 
     List<Plato> obtenerDisponibles();
 
-    Plato actualizar(Long id, Plato plato);
+    Plato actualizar(Long id, Plato plato, Long categoriaId);
 
     void eliminar(Long id);
 }

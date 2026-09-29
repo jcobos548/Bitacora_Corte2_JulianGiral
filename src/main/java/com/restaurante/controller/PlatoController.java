@@ -28,7 +28,11 @@ public class PlatoController {
             @Valid @RequestBody PlatoRequestDTO requestDTO) {
 
         Plato plato = platoMapperIn.toDomain(requestDTO);
-        Plato creado = platoService.crear(plato);
+
+        Plato creado = platoService.crear(
+                plato,
+                requestDTO.getCategoriaId()
+        );
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -74,7 +78,12 @@ public class PlatoController {
             @Valid @RequestBody PlatoRequestDTO requestDTO) {
 
         Plato plato = platoMapperIn.toDomain(requestDTO);
-        Plato actualizado = platoService.actualizar(id, plato);
+
+        Plato actualizado = platoService.actualizar(
+                id,
+                plato,
+                requestDTO.getCategoriaId()
+        );
 
         return ResponseEntity.ok(
                 platoMapperOut.toResponse(actualizado)

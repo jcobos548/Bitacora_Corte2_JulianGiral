@@ -14,4 +14,5 @@ public class Plato {
     private String descripcion;
     private Double precio;
     private Boolean disponible;
+    private Categoria categoria;
 }

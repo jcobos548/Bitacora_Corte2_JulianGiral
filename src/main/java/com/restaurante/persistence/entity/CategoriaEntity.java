@@ -6,11 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "platos")
+@Table(name = "categorias")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PlatoEntity {
+public class CategoriaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,14 +21,4 @@ public class PlatoEntity {
 
     @Column(nullable = false)
     private String descripcion;
-
-    @Column(nullable = false)
-    private Double precio;
-
-    @Column(nullable = false)
-    private Boolean disponible;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "categoria_id", nullable = false)
-    private CategoriaEntity categoria;
 }
